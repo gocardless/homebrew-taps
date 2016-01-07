@@ -1,9 +1,9 @@
 class Logsearch < Formula
   desc "Search Elasticsearch logs from the command line"
   homepage "https://github.com/gocardless/logsearch"
-  url "https://github.com/gocardless/logsearch/releases/download/v0.1/logsearch-0.1.darwin-amd64.tgz"
-  version "64"
-  sha256 "74df603c56aa3cfb6ef26d4777f93242d21e64c2f3058833b2ccc5f5fbc85113"
+  url "https://github.com/gocardless/logsearch/releases/download/v0.2/logsearch-0.2.darwin-amd64.tgz"
+  version "0.2"
+  sha256 "5dc7b0d106250b357cde7086026f9ed41de74a1ac3d20ee10a20b71900fd90e2"
 
   def install
     bin.install "logsearch"
