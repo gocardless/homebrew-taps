@@ -3,9 +3,9 @@
 class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage "https://github.com/gocardless/draupnir"
-  url "https://s3-eu-west-1.amazonaws.com/gocardless-tools/draupnir-client-0.1.4.zip"
-  sha256 "ea7f984b265ce6cdd7bbbb90a8d91ac6347a14d0fd7d3d70f9c0cf36e176ddc6"
-  version "0.1.4"
+  url "https://s3-eu-west-1.amazonaws.com/gocardless-tools/draupnir-client-1.0.0.zip"
+  sha256 "a8c843f7f720562d16b7d93cbdcf81db704c9abbcf4aec6362e7a0156e6fe25b"
+  version "1.0.0"
 
   def install
     bin.install "draupnir-client"
