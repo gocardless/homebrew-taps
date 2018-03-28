@@ -1,9 +1,9 @@
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  url "https://github.com/gocardless/anu/releases/download/v0.0.9/anu_0.0.9_darwin_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-  version "0.0.9"
-  sha256 "d6ea9b48908cf5c2e4cc61c9ecdcb147c9c475d3e58a8f10c312ea267cca21b2"
+  url "https://github.com/gocardless/anu/releases/download/v0.0.10/anu_0.0.10_darwin_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+  version "0.0.10"
+  sha256 "16f0582f052bbc68d1383899282688f113c07295a63ca69bc83263fabaae609a"
 
   def install
     bin.install "anu"
