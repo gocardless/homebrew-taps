@@ -1,3 +1,7 @@
+# If we've not already set this, then we can set it from our anu github token as this has
+# repo scope. It's a bit hacky but should work for now.
+ENV["HOMEBREW_GITHUB_API_TOKEN"] ||= ENV["ANU_GITHUB_TOKEN"]
+
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
