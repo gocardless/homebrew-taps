@@ -1,9 +1,9 @@
 class PgsqlClusterManager < Formula
   desc "Orchestrator for Postgres clustering with corosync/pacemaker/etcd"
   homepage "https://github.com/gocardless/pgsql-cluster-manager"
-  url "https://github.com/gocardless/pgsql-cluster-manager/releases/download/v0.0.6/pgsql-cluster-manager_0.0.6_darwin_amd64.tar.gz"
-  version "0.0.6"
-  sha256 "6a487048beac59a6445cd0015f0ba00c74017f08949b2be33efbd2d2d1bd51e5"
+  url "https://github.com/gocardless/pgsql-cluster-manager/releases/download/v0.0.7/pgsql-cluster-manager_0.0.7_darwin_amd64.tar.gz"
+  version "0.0.7"
+  sha256 "7e56bf61ab1e9a395665bf991a48ff55e4e3878af5c271fe5324dfc744053a76"
 
   def install
     bin.install "pgsql-cluster-manager"
