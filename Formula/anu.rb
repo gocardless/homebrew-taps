@@ -1,12 +1,13 @@
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  url "https://github.com/gocardless/anu/releases/download/v4.0.0/anu_4.0.0_darwin_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-  version "4.0.0"
-  sha256 "bfb28a542e9a83cb05359ccf70abc4ebc893f7c06f8e203a45a873a3cd1d7aa0"
+  url "https://github.com/gocardless/anu/releases/download/v4.1.0/anu_4.1.0_darwin_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+  version "4.1.0"
+  sha256 "0c5d977c4241870f35250068fe3047ab0b49d41739a5b91eb03292d51234d791"
 
   def install
     bin.install "anu"
+    bin.install "anu-terraform"
     
     # Install shell auto-completion
     (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
