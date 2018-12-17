@@ -3,7 +3,7 @@ class Anu < Formula
   homepage "https://github.com/gocardless/anu"
   url "https://github.com/gocardless/anu/releases/download/v4.2.1/anu_4.2.1_darwin_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
   version "4.2.1"
-  sha256 "91b06c5122ae2c2be8630d5ce1bec972537358ce7a9b550cb73b2f1621d13152"
+  sha256 "08ec8a446ae2a85af78407f45d49b9493f3d8327258b7e92c542d07da1357352"
 
   def install
     bin.install "anu"
