@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PgsqlClusterManager < Formula
   desc "Orchestrator for Postgres clustering with corosync/pacemaker/etcd"
   homepage "https://github.com/gocardless/pgsql-cluster-manager"
@@ -10,6 +12,5 @@ class PgsqlClusterManager < Formula
   end
 
   test do
-    
   end
 end
