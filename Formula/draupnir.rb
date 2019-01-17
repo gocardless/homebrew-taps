@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage ""

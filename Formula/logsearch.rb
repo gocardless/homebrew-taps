@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Logsearch < Formula
   desc "Search Elasticsearch logs from the command line"
   homepage "https://github.com/gocardless/logsearch"
