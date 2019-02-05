@@ -2,9 +2,9 @@
 class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage ""
-  url "https://github.com/gocardless/draupnir/releases/download/v3.0.2/draupnir_3.0.2_darwin_amd64.tar.gz"
-  version "3.0.2"
-  sha256 "fbbff9c80ecb37a1ad0c729f62ce2c02f65345352b30cc3c4ce3984572d52913"
+  url "https://github.com/gocardless/draupnir/releases/download/v3.0.3/draupnir_3.0.3_darwin_amd64.tar.gz"
+  version "3.0.3"
+  sha256 "eb69ee0f3e2c019da41c03f9a7ba352c7638b8c5379acc8ae2d943741729ffbc"
 
   def install
     bin.install "draupnir"
