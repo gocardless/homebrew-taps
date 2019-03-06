@@ -4,7 +4,7 @@ class Pgreplay < Formula
   homepage "https://github.com/gocardless/pgreplay-go"
   url "https://github.com/gocardless/pgreplay-go/releases/download/v0.1.1/pgreplay_0.1.1_darwin_amd64.tar.gz"
   version "0.1.1"
-  sha256 "12ac3227242610b5926c86a5262ec7ea9b98b47d8fc4ab59ae1a5fed299fb147"
+  sha256 "7741738bc5ca6d8b71f3f020bab742374492f995d945b7b7f876e9a228eca6ee"
 
   def install
     bin.install "pgreplay"
