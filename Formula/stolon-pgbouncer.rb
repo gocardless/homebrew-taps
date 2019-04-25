@@ -2,9 +2,9 @@
 class StolonPgbouncer < Formula
   desc "Stolon add-on for running PgBouncer"
   homepage "https://github.com/gocardless/stolon-pgbouncer"
-  url "https://github.com/gocardless/stolon-pgbouncer/releases/download/v0.5.0/stolon-pgbouncer_0.5.0_darwin_amd64.tar.gz"
-  version "0.5.0"
-  sha256 "90302a5f6c73846fa4bfb530002d9721046124defc5982a7145d869d2e0e977e"
+  url "https://github.com/gocardless/stolon-pgbouncer/releases/download/v0.6.0/stolon-pgbouncer_0.6.0_darwin_amd64.tar.gz"
+  version "0.6.0"
+  sha256 "8fce6077cf57320246717d1d5868715911fe8ae03a4462e8466df2d057c74ac6"
 
   def install
     bin.install "stolon-pgbouncer"
