@@ -2,9 +2,9 @@
 class Datalab < Formula
   desc "GC Datalab - Tool to deploy and manage GC Datalab instances"
   homepage "https://github.com/gocardless/datalab"
-  url "https://github.com/gocardless/datalab/releases/download/v0.1.0-alpha/datalab_0.1.0-alpha_darwin_amd64.tar.gz"
-  version "0.1.0-alpha"
-  sha256 "cb1f6b69f1a66672731945f4cd16331b0b21e317939dc82238975c650b3261d8"
+  url "https://github.com/gocardless/datalab/releases/download/v0.1.0-alpha.1/datalab_0.1.0-alpha.1_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+  version "0.1.0-alpha.1"
+  sha256 "3d216bca7f2e46f36c72f75d736315008c5505a529d44fa2d7a4e0a04ed4d4b4"
 
   def install
     bin.install "datalab"
