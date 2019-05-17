@@ -2,9 +2,9 @@
 class Pgreplay < Formula
   desc "PostgreSQL load testing tool"
   homepage "https://github.com/gocardless/pgreplay-go"
-  url "https://github.com/gocardless/pgreplay-go/releases/download/v0.1.2/pgreplay_0.1.2_darwin_amd64.tar.gz"
-  version "0.1.2"
-  sha256 "0249b97716bdf4d692d4933e4529767d314c501a58070999e9f5b4350afc3bdd"
+  url "https://github.com/gocardless/pgreplay-go/releases/download/v0.1.3/pgreplay_0.1.3_darwin_amd64.tar.gz"
+  version "0.1.3"
+  sha256 "a57794759d3775133278fba5a0e4bedfb609c0c6dcc8857d9876950df0921982"
 
   def install
     bin.install "pgreplay"
