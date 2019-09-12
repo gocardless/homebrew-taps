@@ -3,9 +3,9 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class GcOwners < Formula
   desc "GoCardless code ownership tool"
   homepage "https://github.com/gocardless/gc-owners"
-  url "https://github.com/gocardless/codeowners/releases/download/v0.0.5/codeowners_0.0.5_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-  version "0.0.5"
-  sha256 "2679a9300f1c794b55ea0811efe8637d6e2aebf5296022e5d08972aa74469768"
+  url "https://github.com/gocardless/codeowners/releases/download/v0.0.6/codeowners_0.0.6_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+  version "0.0.6"
+  sha256 "69665e2f9e53e34c52db5542efe85ece05e1f773a26c06f6395b6b032db4f788"
 
   def install
     bin.install "gc-owners"
