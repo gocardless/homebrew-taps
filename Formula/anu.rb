@@ -3,16 +3,15 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  url "https://github.com/gocardless/anu/releases/download/v6.1.0/anu_6.1.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-  version "6.1.0"
-  sha256 "e0b28b6c539078775f2fed4e6919104bbba19f4e9b83d4a50a56a906243c5789"
+  url "https://github.com/gocardless/anu/releases/download/v6.1.1/anu_6.1.1_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+  version "6.1.1"
+  sha256 "afc774e20b578da262adfdcf5a963bffda6aee75e318334cc5fa7d20b994a885"
   
   depends_on "kubernetes-cli"
 
   def install
     bin.install "anu"
     bin.install "anu-terraform"
-    bin.install "abr-stolon-cluster"
     
     # Install shell auto-completion
     (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
