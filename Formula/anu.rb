@@ -3,9 +3,9 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  url "https://github.com/gocardless/anu/releases/download/v6.3.1/anu_6.3.1_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-  version "6.3.1"
-  sha256 "3f358216cba15032ee3d094ee0c548758b00b2ad7d7e652bc6ca41a0a74a7e1d"
+  url "https://github.com/gocardless/anu/releases/download/v6.3.2/anu_6.3.2_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+  version "6.3.2"
+  sha256 "acfefc705415e47e6993dd1cf742ee5051743ef0ab9f9b657dcc2cb88ec5e19e"
   
   depends_on "kubernetes-cli"
 
