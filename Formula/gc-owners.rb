@@ -8,11 +8,11 @@ class GcOwners < Formula
 
   if OS.mac?
     url "https://github.com/gocardless/codeowners/releases/download/v0.0.9/codeowners_0.0.9_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "579bf92e06a19c158d132f5e12266cd1b463232c8741d7220f699fb4b98c53b0"
+    sha256 "4f6113b31e6927ce6e7a20917b0fb32810e026ab0dc325d3a7a425f2de38fe35"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/gocardless/codeowners/releases/download/v0.0.9/codeowners_0.0.9_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "5b30805b37cb224784dd65a9b9cebd05256164d97341f0498b62ee670a761ef8"
+      sha256 "660c26f7ecbfb19d59dad61f14d95cb0e7c9e317edbd78c58fcbdf93dae435d1"
     end
   end
 
