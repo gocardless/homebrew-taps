@@ -3,16 +3,16 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "10.3.0"
+  version "10.4.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/anu/releases/download/v10.3.0/anu_10.3.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "c41eaf5b6e360d0a3f18c7c7c954ae4d09ef8da3691ee31d7903118865ae1bb7"
+    url "https://github.com/gocardless/anu/releases/download/v10.4.0/anu_10.4.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "5884b5d597d11c87198ce0422a667d33aa1de7fb7cf97d15efbd8dd78ec784f8"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v10.3.0/anu_10.3.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "75254e866bc529981dd0a265a94ec3f4bf81a470916cfe932edcb77d56a58863"
+      url "https://github.com/gocardless/anu/releases/download/v10.4.0/anu_10.4.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "953c2fbdc66a5c05dce24a37fc65bfb1194ff129dbc367382fe5ff401b4670b1"
     end
   end
   
@@ -28,7 +28,7 @@ class Anu < Formula
     (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
     (zsh_completion/"_anu").write(Utils.popen_read("#{bin}/anu completion zsh"))
     (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-    (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh"))
+    (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
   end
 
   def caveats; <<~EOS
