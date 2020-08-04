@@ -2,9 +2,18 @@
 class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage ""
-  url "https://github.com/gocardless/draupnir/releases/download/v5.1.0/draupnir_5.1.0_darwin_amd64.tar.gz"
-  version "5.1.0"
-  sha256 "81e03c69c1fd098cc621b7aa849a17806264bdc9f758dac0bd9ed209fbdff54f"
+  version "5.2.0"
+  bottle :unneeded
+
+  if OS.mac?
+    url "https://github.com/gocardless/draupnir/releases/download/v5.2.0/draupnir_5.2.0_darwin_amd64.tar.gz"
+    sha256 "9753367cabe47b8e61a818d6024553feb01489db5bc249bc2076f21d132bf65b"
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/draupnir/releases/download/v5.2.0/draupnir_5.2.0_linux_amd64.tar.gz"
+      sha256 "ee2841f95b6cfcb044ef675631f2b85d5aa477c9f14e1c021bc04f0545279ec1"
+    end
+  end
 
   def install
     bin.install "draupnir"
