@@ -3,21 +3,22 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "12.4.0"
+  version "12.5.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/anu/releases/download/v12.4.0/anu_12.4.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "ebc90d3edf097fa46ec80c425e5ef9e4e9defecb9321ee5baf4074190be98dec"
+    url "https://github.com/gocardless/anu/releases/download/v12.5.0/anu_12.5.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "9fcfacedcdb9d7ceb0b6f66e613291c42c2cb2e31684b703ac4ee8546caa6c29"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v12.4.0/anu_12.4.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "10d9281a3f893142c2520fb6fc0b1f774c109c029c7a8239785b73459c3afc7c"
+      url "https://github.com/gocardless/anu/releases/download/v12.5.0/anu_12.5.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "476fb230b90b294e27656459053aaa3410654760c0143000320391b1384c94de"
     end
   end
   
   depends_on "kubernetes-cli"
   depends_on "fzf"
+  depends_on "argocd"
 
   def install
     bin.install "anu"
