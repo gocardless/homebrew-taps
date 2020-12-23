@@ -3,9 +3,9 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Datalab < Formula
   desc "GC Datalab - Tool to deploy and manage GC Datalab instances"
   homepage "https://github.com/gocardless/datalab"
-  url "https://github.com/gocardless/datalab/releases/download/v0.1.22/datalab_0.1.22_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-  version "0.1.22"
-  sha256 "acb998ba636c47efe607483e71b28d930b342e0acad65367f1a0a2ac2e81ac51"
+  url "https://github.com/gocardless/datalab/releases/download/v0.1.23/datalab_0.1.23_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+  version "0.1.23"
+  sha256 "828ae973e0a8f52b2797aa1a9e4306db70066d6db86d14d15c9f1f18a62f1083"
 
   def install
     bin.install "datalab"
