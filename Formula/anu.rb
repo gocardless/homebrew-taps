@@ -3,16 +3,16 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "19.7.4"
+  version "19.7.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/anu/releases/download/v19.7.4/anu_19.7.4_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "8e5821ba3907d192b3139886d3ed20f2351c16fe1ca869f34c585d33ae5f3070"
+    url "https://github.com/gocardless/anu/releases/download/v19.7.5/anu_19.7.5_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "68f52a5194faf33a25f4498f20cda2f25bea86c4873502306daa1c01797ec03e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v19.7.4/anu_19.7.4_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "65435c6396080a85b3ca75d356e8b8c01ddf398cc44b4b0e1ff7f09551fd240f"
+      url "https://github.com/gocardless/anu/releases/download/v19.7.5/anu_19.7.5_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "ea9f8b1208a70449760214963ce46aa565f69d787d82e84c803f82d7d05feee0"
     end
   end
   
