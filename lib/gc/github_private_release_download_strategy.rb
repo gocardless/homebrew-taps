@@ -67,7 +67,7 @@ module Gc
     def fetch_release_metadata
       release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/" \
                     "releases/tags/#{@tag}"
-      GitHub.open_api(release_url)
+      GitHub::API.open_rest(release_url)
     end
   end
 end
