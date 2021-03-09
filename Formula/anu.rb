@@ -3,16 +3,16 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "20.3.1"
+  version "21.0.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/anu/releases/download/v20.3.1/anu_20.3.1_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "9293f148e4ae7917301cc83c99b1cc13f526d474d9e6bd31f01d68f42f44663e"
+    url "https://github.com/gocardless/anu/releases/download/v21.0.0/anu_21.0.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "6b81d13118a0f2679485952a6fba0bae3b0868bde1b762b166a1bfc060770bb8"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v20.3.1/anu_20.3.1_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "1361e26d4bb9841fa6e8c81f823d2ff9c191951ce6042325a02ddb4629b49d2b"
+      url "https://github.com/gocardless/anu/releases/download/v21.0.0/anu_21.0.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "67402ce76323d7ed0fed2176455e92e61baf2d786d80c14cfb3da6fbad690ca1"
     end
   end
   
@@ -22,7 +22,6 @@ class Anu < Formula
 
   def install
     bin.install "anu"
-    bin.install "anu-terraform"
     bin.install "utopia"
     
     # Install shell auto-completion
