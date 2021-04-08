@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../lib/gc/github_private_release_download_strategy"
-
 class ExposeHostAgent < Formula
   desc "Wrapper command that exposes your local SSH agent for use during docker builds"
   homepage "https://github.com/gocardless/expose-host-agent"
