@@ -3,16 +3,16 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Dispatcher < Formula
   desc "Continuously dispatching deploys"
   homepage "https://github.com/gocardless/dispatcher"
-  version "0.17.15"
+  version "0.17.16"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/dispatcher/releases/download/v0.17.15/dispatcher_0.17.15_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "71a00f1d1d702cb96ae278f34315832bd65beada981944751cdac60193526290"
+    url "https://github.com/gocardless/dispatcher/releases/download/v0.17.16/dispatcher_0.17.16_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "73531ed34dd5c20a678fc9fd1bba862803005928f833baf2a8704eaaa4b2e7c2"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/dispatcher/releases/download/v0.17.15/dispatcher_0.17.15_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "dd1e25e88ffb7f674f4feeb9cdc951f2599953669a25939d36f1d18cb0311a3c"
+      url "https://github.com/gocardless/dispatcher/releases/download/v0.17.16/dispatcher_0.17.16_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "b5bd829b3dd0b6150080bf6f598380e6be63afb61dfe2d1930534c5e01409352"
     end
   end
 
