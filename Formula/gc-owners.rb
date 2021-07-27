@@ -6,16 +6,29 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class GcOwners < Formula
   desc "GoCardless code ownership tool"
   homepage "https://github.com/gocardless/gc-owners"
-  version "0.1.2"
+  version "0.1.3"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/gocardless/codeowners/releases/download/v0.1.2/codeowners_0.1.2_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "3518ee195faf478c99ea3c08d52a9e42f920e706514889524f9eba4d04b7983a"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/codeowners/releases/download/v0.1.3/codeowners_0.1.3_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "034dea7086911dc375988f2de12149407340cbb4a4d6d0de5c53b19482b274d8"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/gocardless/codeowners/releases/download/v0.1.3/codeowners_0.1.3_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "27157aa7a22917305076786114e5514df8b7d55cd642ddc79341c542850ec1db"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gocardless/codeowners/releases/download/v0.1.2/codeowners_0.1.2_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "79355f41429a431e09bc87249d490192f2a732a542fde94a3f392caf9e18fb14"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/codeowners/releases/download/v0.1.3/codeowners_0.1.3_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "df9c3be85c1e501aa5f939514949f2636ae41f0e39ab016646b230a99d90ae8b"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gocardless/codeowners/releases/download/v0.1.3/codeowners_0.1.3_linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "4ed164bf9c0c462bd6e71a8d36318a40157a2aa24a52faac6d2eca0bc4c37346"
+    end
   end
 
   def install
