@@ -6,28 +6,28 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class GcOwners < Formula
   desc "GoCardless code ownership tool"
   homepage "https://github.com/gocardless/gc-owners"
-  version "0.1.5"
+  version "0.2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.1.5/codeowners_0.1.5_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a4d8c83435f4754673bb0b1e04b5919a5ce1eb9dabd1e1b5e3e658bb89d7a7a6"
+      url "https://github.com/gocardless/codeowners/releases/download/v0.2.0/codeowners_0.2.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "2c7348ef248adb84a520720bbdda435c906704f49e23b7c038b22b427b02814a"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.1.5/codeowners_0.1.5_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "4ebf4e3bcdc36c6b64f832313956e3b8baf277e19643e056444d0dcf95461428"
+      url "https://github.com/gocardless/codeowners/releases/download/v0.2.0/codeowners_0.2.0_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "ffe596db625434835227d4f52fd796c6254bdc2cd1a73bc530a22d365fa20cdb"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.1.5/codeowners_0.1.5_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "78d145159b364e8bdcf6faeaaacf4bdc34b4b874d1f60557b52dc621de61eb04"
+      url "https://github.com/gocardless/codeowners/releases/download/v0.2.0/codeowners_0.2.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "1d5b69dc4c7e84bb30e74d50727fb01ef43112ebabfff8e25b1b75ed7d52687b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.1.5/codeowners_0.1.5_linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "caac0380d3c229d9fa98171136b7a93d9d60f46bf567c2cbf0609eba620ac2f3"
+      url "https://github.com/gocardless/codeowners/releases/download/v0.2.0/codeowners_0.2.0_linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "6b55edfe2da3117548db1509dfb0ce1af943dd6738b33247166f777a217255b5"
     end
   end
 
