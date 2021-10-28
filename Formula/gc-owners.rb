@@ -7,7 +7,6 @@ class GcOwners < Formula
   desc "GoCardless code ownership tool"
   homepage "https://github.com/gocardless/gc-owners"
   version "0.2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?

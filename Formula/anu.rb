@@ -7,7 +7,6 @@ class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
   version "27.9.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?

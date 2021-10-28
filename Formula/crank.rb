@@ -4,7 +4,6 @@ class Crank < Formula
   desc "GoCardless JSONSchema template generator"
   homepage "https://github.com/gocardless/crank"
   version "1"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/gocardless/crank/releases/download/va9b9cfe/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy

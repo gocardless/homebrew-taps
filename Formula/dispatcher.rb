@@ -4,7 +4,6 @@ class Dispatcher < Formula
   desc "Continuously dispatching deploys"
   homepage "https://github.com/gocardless/dispatcher"
   version "0.19.11"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/gocardless/dispatcher/releases/download/v0.19.11/dispatcher_0.19.11_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
