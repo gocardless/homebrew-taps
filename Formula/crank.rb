@@ -7,12 +7,12 @@ class Crank < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/gocardless/crank/releases/download/va9b9cfe/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "4fad436b7222e725a73ffe14b47de55f1c2ec2fa722f687ba28169de4842be7e"
+    url "https://github.com/gocardless/crank/releases/download/vfa380ab/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "025e3f4fdb7701eb72ce124fb76eb89fabebd29301b6a943b791ed432d7aef19"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/crank/releases/download/va9b9cfe/crank_linux_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "1afda23606db0bfbfe3ec9ce38bd69fa399ee3c2ee4f5134d53b1f38f900490c"
+      url "https://github.com/gocardless/crank/releases/download/vfa380ab/crank_linux_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "51608ebc45067369c009d6fdf3d9de5c9c8bfe5c1bdcada94f0c94ed38df1592"
     end
   end
 
