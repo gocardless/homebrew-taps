@@ -6,12 +6,12 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "29.0.0"
+  version "29.1.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v29.0.0/anu_29.0.0_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "7e2549ac4025f368545a5687fa4002515689cdcae6e7585d8fe00dbcbf597a9a"
+      url "https://github.com/gocardless/anu/releases/download/v29.1.0/anu_29.1.0_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "a630b75963a5cfc1e97dff0f7565bc40a347387f6c5555f540209eb3a2662a82"
 
       def install
         bin.install "anu"
@@ -25,8 +25,8 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v29.0.0/anu_29.0.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "255c1ee28c58d72ba7b47c596c94bbd1772b3c0f7faff9ff9c30f1da98473004"
+      url "https://github.com/gocardless/anu/releases/download/v29.1.0/anu_29.1.0_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "6669ec488a2800c3f3dd5e010191a6f375a960e60ed7650500a1047590110570"
 
       def install
         bin.install "anu"
@@ -43,8 +43,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v29.0.0/anu_29.0.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "af3bb705918db5afafa6e7cf571d6d3460574a4ea34690c01cb7a99d3e7653d4"
+      url "https://github.com/gocardless/anu/releases/download/v29.1.0/anu_29.1.0_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "59eef29a385b2b2b012b913452835162c1228be3aa2f8353218e9ed32665b04e"
 
       def install
         bin.install "anu"
