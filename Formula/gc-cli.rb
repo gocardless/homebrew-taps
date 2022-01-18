@@ -9,9 +9,9 @@ class GcCli < Formula
   version "0.0.1-rc3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_masOS_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "1173d5250c646fec70d00fa84989c4d214b4788e3b5178e64d01a1ac56609ed3"
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_masOS_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "192e0962153bf11356bc5518f61ab74fa09a7b432de583d7c3e1cdf3eba5afc5"
 
       def install
         bin.install "gc"
@@ -21,9 +21,9 @@ class GcCli < Formula
         (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_masOS_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "7a0fe5a9f6fa8ec8b04dc262aa9e3e6325a138757654bbeecdd5cc206a527831"
+    if Hardware::CPU.arm?
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_masOS_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "7425a897d3d6d9f86773033113a4ac30e624b81e9b301db851a91367f5a48c99"
 
       def install
         bin.install "gc"
@@ -38,7 +38,7 @@ class GcCli < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_Linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "c968914d3f979e4d4a23a8199a3ac1b866201c5b2ec833e7a339b9c5512af7c0"
+      sha256 "2dcaf03d93f2706975f4fd684d9ed26a4607df60898eba2a7f95e1e385c12467"
 
       def install
         bin.install "gc"
@@ -50,7 +50,7 @@ class GcCli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc3/gc-cli_0.0.1-rc3_Linux_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a951c138fb5ef730ecc66fff1fd2c6662744e5384c1ecd3c5d93ccf2d94a8b13"
+      sha256 "b74bb83e41495eeead2554cff9ffb1cbdd4799d281e73a9091dd7c9cfba51073"
 
       def install
         bin.install "gc"
