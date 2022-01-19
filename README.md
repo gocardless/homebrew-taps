@@ -4,11 +4,11 @@
 
 ## Upgrading Formula version
 
-1. Get new download URL for the Formula you want to upgrade. 
+1. Get the latest release URL for the library you want to upgrade. 
 Example:
-`https://github.com/gocardless/crank/releases/download/v1b61d42/crank_darwin_amd64`
+`https://github.com/gocardless/crank/releases/latest`
 
-2. Update the `url` value in the Formula file.
+2. Update the `release` value in the `url`.
 
 3. Generate a checksum for release files. **Note:** Some releases already contain a file
 with checksums. If that is the case the checksum should be obtained from there. Otherwise
@@ -24,8 +24,8 @@ follow the steps below.
 
 5. Update the `sha256` value in the Formula file.
 
-**Note:** If the Formula has different versions for different operating systems, all 
-of the steps must be repeated for all of the files.
+**Note:** If the Formula has operating systems dependent versions, the 
+hash needs to be calculated for each of them.
 
 ### Testing the upgrade
 
