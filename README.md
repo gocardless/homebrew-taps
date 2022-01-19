@@ -29,7 +29,8 @@ hash needs to be calculated for each of them.
 
 ### Testing the upgrade
 
-Make sure to test if the Formula has been upgraded properly:
+Make sure to test if the Formula has been upgraded properly. Run the following
+command from the repository directory:
 ```console
-brew install Formula/crank.rb
+brew install Formula/<upgraded_formula>.rb
 ```
