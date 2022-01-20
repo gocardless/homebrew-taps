@@ -3,7 +3,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Crank < Formula
   desc "GoCardless JSONSchema template generator"
   homepage "https://github.com/gocardless/crank"
-  version "1"
+  version "2"
   bottle :unneeded
 
   if OS.mac?
