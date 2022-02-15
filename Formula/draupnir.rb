@@ -3,7 +3,6 @@ class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage ""
   version "5.2.2"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/gocardless/draupnir/releases/download/v5.2.2/draupnir_5.2.2_darwin_amd64.tar.gz"
