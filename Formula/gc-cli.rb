@@ -6,12 +6,12 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class GcCli < Formula
   desc "GoCardless CLI"
   homepage "https://github.com/gocardless/gc-cli"
-  version "0.0.1-rc7"
+  version "0.0.1-rc8"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc7/gc-cli_0.0.1-rc7_masOS_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "f04b8e0a402354e08021349d662a5a3865e0d1912a47564f2d00e30372cdc7ff"
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc8/gc-cli_0.0.1-rc8_masOS_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "bde568ac770726400b3645ccf1d4a064b60bf0973ed2645eae5bd29f61b71abe"
 
       def install
         bin.install "gc"
@@ -22,8 +22,8 @@ class GcCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc7/gc-cli_0.0.1-rc7_masOS_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "7f9aef05559ecf0d731c5be12958f9c19864e952b1acdd346cc3667f3bb3f36c"
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc8/gc-cli_0.0.1-rc8_masOS_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "51da42f83d8441355c8b807c71df037df296ced634b9dfe3956260c20473823b"
 
       def install
         bin.install "gc"
@@ -37,8 +37,8 @@ class GcCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc7/gc-cli_0.0.1-rc7_Linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "da42c900995b09d64b908165d6a149b341b03a3e2785c575134c12c056faa8e8"
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc8/gc-cli_0.0.1-rc8_Linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "a3113dd508a0a35a8834e5456543c155cd96f0d70725521b804a035aed919f02"
 
       def install
         bin.install "gc"
@@ -49,8 +49,8 @@ class GcCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc7/gc-cli_0.0.1-rc7_Linux_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "38e3ff13994f3efb2518487a5a6ebf4201b071a5306f8b0e25f0dc31102bfc9a"
+      url "https://github.com/gocardless/gc-cli/releases/download/v0.0.1-rc8/gc-cli_0.0.1-rc8_Linux_x86_64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "08412c22bdd943977e94f99c780b051cc906d4705dd0f04e08da02c4bbb5f436"
 
       def install
         bin.install "gc"
