@@ -10,7 +10,7 @@ class Cli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-alpha.3/cli_1.0.0-alpha.3_masOS_arm64.tar.gz"
-      sha256 "0798ddde24e24158de999f2fb054d639730caee8619368a940cb62f6e73cfd06"
+      sha256 "dee9dfc48317e0cc33939c5e84177f028071ab63cd4b96297a1f2935f16d13b7"
 
       def install
         bin.install "gc"
@@ -23,7 +23,7 @@ class Cli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-alpha.3/cli_1.0.0-alpha.3_masOS_x86_64.tar.gz"
-      sha256 "b61978979c1b110174ace13bae62e1b0d7e1e87ea2017f5809a35de6e2f4f758"
+      sha256 "a42e4b9097231924f52d0208b86ab4fff6adb11486ebc080bf4b49a645d7ddd7"
 
       def install
         bin.install "gc"
@@ -39,7 +39,7 @@ class Cli < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-alpha.3/cli_1.0.0-alpha.3_Linux_arm64.tar.gz"
-      sha256 "f51c62307778d6d9e94bab20936516b0d4472759f562c98e48326a8b6796dc5d"
+      sha256 "3fb217d7e0753a8c4c9df0097a38bc6868e6d025a34975f86f1986f2bd682d8d"
 
       def install
         bin.install "gc"
@@ -52,7 +52,7 @@ class Cli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-alpha.3/cli_1.0.0-alpha.3_Linux_x86_64.tar.gz"
-      sha256 "008f0b03fa502088113810fafa1639f101f061872c089e07dfb17881c8303a96"
+      sha256 "d046562c397805810e48b0291b66b31712348f401bca0f491f7b1ca5fd7bd54c"
 
       def install
         bin.install "gc"
