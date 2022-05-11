@@ -6,20 +6,20 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Dispatcher < Formula
   desc "Continuously dispatching deploys"
   homepage "https://github.com/gocardless/dispatcher"
-  version "0.19.20"
+  version "0.19.21"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.20/dispatcher_0.19.20_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "2583b792497a9b43957d64999aa8c5106619c6191c71dc9706b0d394345989ac"
+      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.21/dispatcher_0.19.21_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "be643932ecde68fde1a3d32eab27b68f0808f56817d8bcc576f0ef4022fa8815"
 
       def install
         bin.install "dispatcher"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.20/dispatcher_0.19.20_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "f0df1789bc0196c377e203eb0d63357ad1ffb633eae58e76cf0d1de6b3538a2f"
+      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.21/dispatcher_0.19.21_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "70f4ce2a9d265fcdf2a3863f7445d8f1472a40f005a157af4e3141233b8e5f82"
 
       def install
         bin.install "dispatcher"
@@ -29,16 +29,16 @@ class Dispatcher < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.20/dispatcher_0.19.20_linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "0eda95c6aaed7355227aa638230bbdfa253e462aa0b325c9e2672a45db3ebbe9"
+      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.21/dispatcher_0.19.21_linux_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "ab28df208949897fcc1b20333fe977e34ca289fd91fc5076bb89f0c2108350d1"
 
       def install
         bin.install "dispatcher"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.20/dispatcher_0.19.20_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a991396124c5a79f594f0072e1a5373c4c099c1b66aee08d04a9758d2b54f1fa"
+      url "https://github.com/gocardless/dispatcher/releases/download/v0.19.21/dispatcher_0.19.21_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "2c928361b95f8e1d21dc0c43c6dcb401dc124b96730e9e93c0d512625c672101"
 
       def install
         bin.install "dispatcher"
