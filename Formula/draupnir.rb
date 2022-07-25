@@ -8,7 +8,7 @@ class Draupnir < Formula
   version "5.3.0"
   bottle :unneeded
 
-  if OS.mac?
+  if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/gocardless/draupnir/releases/download/v5.3.0/draupnir_5.3.0_darwin_amd64.tar.gz"
     sha256 "500997a1c6c82526051b616c4ab1990f9e9d0202bd2d6e317c96bab52b5b5b87"
   end
