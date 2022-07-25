@@ -5,28 +5,44 @@
 class Draupnir < Formula
   desc "Client for the draupnir database service"
   homepage ""
-  version "5.3.0"
-  bottle :unneeded
+  version "5.3.1"
 
-  if OS.mac?
-    url "https://github.com/gocardless/draupnir/releases/download/v5.3.0/draupnir_5.3.0_darwin_amd64.tar.gz"
-    sha256 "500997a1c6c82526051b616c4ab1990f9e9d0202bd2d6e317c96bab52b5b5b87"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/gocardless/draupnir/releases/download/v5.3.0/draupnir_5.3.0_darwin_arm64.tar.gz"
-    sha256 "b3b0a54407ab25e040a2bb4dcb8d2a423f0889d8563d04d50abdbb9100995b3f"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gocardless/draupnir/releases/download/v5.3.0/draupnir_5.3.0_linux_amd64.tar.gz"
-    sha256 "c058cd0a46b36f42d2b7e0a5f53e0edf1a8507e1037780ec1d77171d1211ba3a"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/gocardless/draupnir/releases/download/v5.3.0/draupnir_5.3.0_linux_arm64.tar.gz"
-    sha256 "b50cfbb98205c447b1b4012015c0b981d6dabcd326598c26212d7f9a9ac56a34"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/draupnir/releases/download/v5.3.1/draupnir_5.3.1_darwin_amd64.tar.gz"
+      sha256 "da029eeccbe54a677ae089d67342718af6dcb2879813022e3b848c89e7b02ea9"
+
+      def install
+        bin.install "draupnir"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/gocardless/draupnir/releases/download/v5.3.1/draupnir_5.3.1_darwin_arm64.tar.gz"
+      sha256 "70acc5fa541d02b8475fc48b35c5d4324b331a162820bae95c4c0462c2f531d0"
+
+      def install
+        bin.install "draupnir"
+      end
+    end
   end
 
-  def install
-    bin.install "draupnir"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gocardless/draupnir/releases/download/v5.3.1/draupnir_5.3.1_linux_arm64.tar.gz"
+      sha256 "98cd0f2ed713b4a52828f304e247c9b3027db5b9c5b51515ccfe9685af5f7f70"
+
+      def install
+        bin.install "draupnir"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/draupnir/releases/download/v5.3.1/draupnir_5.3.1_linux_amd64.tar.gz"
+      sha256 "2f80b4058f96afa15b0b1e5a5c44fa2d24267473491e007c2b716e68cb712c7c"
+
+      def install
+        bin.install "draupnir"
+      end
+    end
   end
 
   test do
