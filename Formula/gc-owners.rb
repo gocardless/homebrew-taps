@@ -5,7 +5,7 @@
 require_relative "../lib/gc/github_private_release_download_strategy"
 class GcOwners < Formula
   desc "GoCardless code ownership tool"
-  homepage "https://github.com/gocardless/gc-owners"
+  homepage "https://github.com/gocardless/codeowners"
   version "0.4.2"
 
   on_macos do
