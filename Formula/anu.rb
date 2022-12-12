@@ -6,12 +6,16 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "31.5.1"
+  version "31.6.1"
+
+  depends_on "kubernetes-cli"
+  depends_on "fzf"
+  depends_on "argocd"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v31.5.1/anu_31.5.1_darwin_arm64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "975605513f6c180e8dcc30f8da37582a4bb1869052a6a7e2d4f0696e6ab8c1a4"
+      url "https://github.com/gocardless/anu/releases/download/v31.6.1/anu_31.6.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "b39a59b40bd5aa7d9b1156b106c21f1419f18c8867daf3a18e06977ac0b35126"
 
       def install
         bin.install "anu"
@@ -25,8 +29,8 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.5.1/anu_31.5.1_darwin_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "ebd607a734213a3a288198a8a7baeff7fc70e880202e80f7e6893277d7de6bca"
+      url "https://github.com/gocardless/anu/releases/download/v31.6.1/anu_31.6.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "be3572844be5ed3d05c1475b739ed5642900b0a72dbe21bd6bf61ae2b0d130c0"
 
       def install
         bin.install "anu"
@@ -43,8 +47,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.5.1/anu_31.5.1_linux_amd64.tar.gz", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "dced0afb8b8a5225650f665c98f3fad1581f7cd688f07e6849bb7388ea4fc52a"
+      url "https://github.com/gocardless/anu/releases/download/v31.6.1/anu_31.6.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "2640579a57e765848a88fa69a871384c08a8a0368ab34e50d056883579a8f140"
 
       def install
         bin.install "anu"
@@ -59,13 +63,10 @@ class Anu < Formula
     end
   end
 
-  depends_on "kubernetes-cli"
-  depends_on "fzf"
-  depends_on "argocd"
-
-  def caveats; <<~EOS
-    Check https://github.com/gocardless/anu for how to configure anu
-  EOS
+  def caveats
+    <<~EOS
+      Check https://github.com/gocardless/anu for how to configure anu
+    EOS
   end
 
   test do
