@@ -5,12 +5,12 @@
 class Cli < Formula
   desc "GoCardless CLI"
   homepage "https://github.com/gocardless/cli-releases"
-  version "1.0.0-beta.3"
+  version "1.0.0-beta.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.3/cli_1.0.0-beta.3_macOS_arm64.tar.gz"
-      sha256 "1034833b48c2308440714f4e3171ebee45f42020344dac7b1920ef017183c4d5"
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.4/cli_1.0.0-beta.4_macOS_x86_64.tar.gz"
+      sha256 "50e9bfb717879536fb6093e51eeb80553bf6cd3bc2b8f84fe10bb49363659806"
 
       def install
         bin.install "gc"
@@ -21,9 +21,9 @@ class Cli < Formula
         (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.3/cli_1.0.0-beta.3_macOS_x86_64.tar.gz"
-      sha256 "1105e352366065444010e7011bbdc1fc93da3d41a11ef6b882c407cb72aca27c"
+    if Hardware::CPU.arm?
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.4/cli_1.0.0-beta.4_macOS_arm64.tar.gz"
+      sha256 "0ef093f0aa91ab84511e0f5f794166ab09f1fc3a01432f200668344269caf9dd"
 
       def install
         bin.install "gc"
@@ -38,8 +38,8 @@ class Cli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.3/cli_1.0.0-beta.3_Linux_arm64.tar.gz"
-      sha256 "8e8ec90de60a2fd45fd988c2d40ad263cfb63bd972965bc5dd21df50aef283d4"
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.4/cli_1.0.0-beta.4_Linux_arm64.tar.gz"
+      sha256 "d9f01878f418974356181bd655e16274dc55a2c5edf057672ef01faab9baef8e"
 
       def install
         bin.install "gc"
@@ -51,8 +51,8 @@ class Cli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.3/cli_1.0.0-beta.3_Linux_x86_64.tar.gz"
-      sha256 "f06c875794eb3888f65b6060f22d9d4a3ece90433c450966c8e107adc4c4d5af"
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.0-beta.4/cli_1.0.0-beta.4_Linux_x86_64.tar.gz"
+      sha256 "5b6b9f6c5f1179f2df6d9295e7dd75ed24522d2209cda9374bd0ef13b7746b0c"
 
       def install
         bin.install "gc"
