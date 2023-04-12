@@ -13,8 +13,6 @@ module Gc
     end
 
     def fetch(*)
-      end_time = Time.now + timeout if timeout
-
       download_lock = LockFile.new(temporary_path.basename)
       download_lock.lock
 
