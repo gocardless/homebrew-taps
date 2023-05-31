@@ -6,61 +6,53 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "31.8.1"
+  version "31.8.2"
 
   depends_on "kubernetes-cli"
   depends_on "fzf"
   depends_on "argocd"
   depends_on "bash"
   depends_on "yq"
+  depends_on "gocardless/taps/utopia"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.1/anu_31.8.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "5787dfce9a363b44b86c8467399e1cbb9aa924c355c8ab22abe7d9c2a938240f"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "6854c52f85454a1f58d61644e9bea43c47fed4d3a4930bf8eee85d63306f3d02"
 
       def install
         bin.install "anu"
-        bin.install "utopia"
 
         # Install shell auto-completion
         (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
         (zsh_completion/"_anu").write(Utils.popen_read("#{bin}/anu completion zsh"))
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.1/anu_31.8.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "fc9238437a4773bcd4905141b13561c8e3ebae11ef5090ba746a72fc8c56c9e6"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "0d23744e85367d380e52a047917084c0dc37af5ee6b4db29eed26ab0c2a5050a"
 
       def install
         bin.install "anu"
-        bin.install "utopia"
 
         # Install shell auto-completion
         (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
         (zsh_completion/"_anu").write(Utils.popen_read("#{bin}/anu completion zsh"))
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.1/anu_31.8.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "74351b16ad285e11373d0b4a91db8d2c9074a96d038c338a0291bb9151454b83"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "ddd6fe043b37798867687a8c3e9913770509e945b4235364f8b28d6e713616ea"
 
       def install
         bin.install "anu"
-        bin.install "utopia"
 
         # Install shell auto-completion
         (bash_completion/"anu").write(Utils.popen_read("#{bin}/anu completion bash"))
         (zsh_completion/"_anu").write(Utils.popen_read("#{bin}/anu completion zsh"))
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
       end
     end
   end
