@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "31.8.2"
+  version "31.8.3"
 
   depends_on "kubernetes-cli"
   depends_on "fzf"
@@ -17,8 +17,8 @@ class Anu < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "6854c52f85454a1f58d61644e9bea43c47fed4d3a4930bf8eee85d63306f3d02"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.3/anu_31.8.3_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "37943bc1951ce81be1442f97de59f764c0154d9b3910ddca7213adedbb710a4f"
 
       def install
         bin.install "anu"
@@ -29,8 +29,8 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "0d23744e85367d380e52a047917084c0dc37af5ee6b4db29eed26ab0c2a5050a"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.3/anu_31.8.3_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "5517e65d206d67ada5b63345d76fdb6bd66bc4684dbe7b56cd71f47e5fbeed31"
 
       def install
         bin.install "anu"
@@ -44,8 +44,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.2/anu_31.8.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "ddd6fe043b37798867687a8c3e9913770509e945b4235364f8b28d6e713616ea"
+      url "https://github.com/gocardless/anu/releases/download/v31.8.3/anu_31.8.3_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "affab45d53f7a999a7f82e228629f038470683cb94d77681585c20c228a9de19"
 
       def install
         bin.install "anu"
