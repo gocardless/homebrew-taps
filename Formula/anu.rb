@@ -6,19 +6,19 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "31.8.4"
+  version "32.0.0"
 
-  depends_on "kubernetes-cli"
-  depends_on "fzf"
   depends_on "argocd"
   depends_on "bash"
-  depends_on "yq"
+  depends_on "fzf"
   depends_on "gocardless/taps/utopia"
+  depends_on "kubernetes-cli"
+  depends_on "yq"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.4/anu_31.8.4_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "767659c4fad65ec60e526c61b4e4b2e91f519b37618698026febc8513e463b4a"
+      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "08edcbb48a025e144a8ccc2a20e22142848e5d4cb90c6d6149210b8ecc49ca39"
 
       def install
         bin.install "anu"
@@ -29,8 +29,8 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.4/anu_31.8.4_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "9606763332a5ee81e14db855d107a26d3b07bd453d17b06b31faa39dc04ee318"
+      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "4bfc11e6db4eedb9fec1cb1539251a77fad6545510b39bdc9fa2eb5dd31a3e7a"
 
       def install
         bin.install "anu"
@@ -44,8 +44,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v31.8.4/anu_31.8.4_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "839f6efd8f615ffe74fd1908ce470077bf4e21292e2a41eeb4f6cdced5d3d327"
+      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "6fce92beca9bb8ef58a3ba425d1516b5bea2b0738741ea6bce8856e3a0864d88"
 
       def install
         bin.install "anu"
