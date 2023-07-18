@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Utopia < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/utopia"
-  version "32.1.0"
+  version "32.2.0"
 
   depends_on "argocd"
   depends_on "bash"
@@ -16,8 +16,8 @@ class Utopia < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/utopia/releases/download/v32.1.0/utopia_32.1.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "3f6f43feaab9e53c69a8ebddcaf65c1f9d556e5d2a97b7e2f7ed74cfff352d2c"
+      url "https://github.com/gocardless/utopia/releases/download/v32.2.0/utopia_32.2.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "0893a2ddc43a7e388e9c20e9b2a39fc3ba4c9f726cb3718f13eeaa8cfc4ce098"
 
       def install
         bin.install "utopia"
@@ -28,8 +28,8 @@ class Utopia < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v32.1.0/utopia_32.1.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "b1f448a3f556e37481bbd9f3ad43e2b68dbe41d48b3cf1eabeb10b5a4ff6d9c0"
+      url "https://github.com/gocardless/utopia/releases/download/v32.2.0/utopia_32.2.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "096eaa7fba72ad273743601540172ec0320423dad6f5c667a33d2705a0fcdfe0"
 
       def install
         bin.install "utopia"
@@ -43,8 +43,8 @@ class Utopia < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v32.1.0/utopia_32.1.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "ef3a5e6f945ebc4b920b08068f34a7f6f4f00c688f6858160d308d1670c9ca0c"
+      url "https://github.com/gocardless/utopia/releases/download/v32.2.0/utopia_32.2.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "401c0c0e99679ed7aea015d27fb5335bfd3ea836db6f759c5aac6e802e437d5a"
 
       def install
         bin.install "utopia"
