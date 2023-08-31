@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Utopia < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/utopia"
-  version "32.4.1"
+  version "32.4.2"
 
   depends_on "argocd"
   depends_on "bash"
@@ -16,8 +16,8 @@ class Utopia < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/utopia/releases/download/v32.4.1/utopia_32.4.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "262d44b41e090d0a4959f4ab2de875873726ab461fea77753fac50cf8eaee46a"
+      url "https://github.com/gocardless/utopia/releases/download/v32.4.2/utopia_32.4.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "190f3f572ed077037a1b97ff39eb7443d95dbc6e26f3b8eece076a8927d621e7"
 
       def install
         bin.install "utopia"
@@ -28,8 +28,8 @@ class Utopia < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v32.4.1/utopia_32.4.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "eb767a6c6905643d32e9168e8954459c0a6aad04af74b31826f05dd33ff0f1a4"
+      url "https://github.com/gocardless/utopia/releases/download/v32.4.2/utopia_32.4.2_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "4a607542bb3d5fbbb21666f3036b55037322b5ea059c38aac1fcc8d69bcd7160"
 
       def install
         bin.install "utopia"
@@ -43,8 +43,8 @@ class Utopia < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v32.4.1/utopia_32.4.1_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "55f964e4307db77e6875e627f2220ae4976dd790b5e876a0a26eb38e940ca8a8"
+      url "https://github.com/gocardless/utopia/releases/download/v32.4.2/utopia_32.4.2_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "a3c3090f8def35168e4849e24a783a7268a167f2f6377e97c1147973868dd407"
 
       def install
         bin.install "utopia"
@@ -55,8 +55,8 @@ class Utopia < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v32.4.1/utopia_32.4.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "6b783abfbdb058555fe62c963af9d1ad632a92c3053d0585fc5ace63f3d24a65"
+      url "https://github.com/gocardless/utopia/releases/download/v32.4.2/utopia_32.4.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "b295665459342b3579b58b79f6f094793d9b2c100ab33d9d9264fe1be82c53de"
 
       def install
         bin.install "utopia"
