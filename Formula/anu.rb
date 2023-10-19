@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "32.0.0"
+  version "33.0.0"
 
   depends_on "argocd"
   depends_on "bash"
@@ -16,9 +16,9 @@ class Anu < Formula
   depends_on "yq"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "08edcbb48a025e144a8ccc2a20e22142848e5d4cb90c6d6149210b8ecc49ca39"
+    if Hardware::CPU.intel?
+      url "https://github.com/gocardless/anu/releases/download/v33.0.0/anu_33.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "861880b31cb5260b1997c1168f61022ffdd43a07b469561c2d49b613103786c6"
 
       def install
         bin.install "anu"
@@ -28,9 +28,9 @@ class Anu < Formula
         (zsh_completion/"_anu").write(Utils.popen_read("#{bin}/anu completion zsh"))
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "4bfc11e6db4eedb9fec1cb1539251a77fad6545510b39bdc9fa2eb5dd31a3e7a"
+    if Hardware::CPU.arm?
+      url "https://github.com/gocardless/anu/releases/download/v33.0.0/anu_33.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "b27e5585265e9b1b06cd3bfdc1a9d5d22af6945291068c60ca386d6a9c02e836"
 
       def install
         bin.install "anu"
@@ -44,8 +44,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v32.0.0/anu_32.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "6fce92beca9bb8ef58a3ba425d1516b5bea2b0738741ea6bce8856e3a0864d88"
+      url "https://github.com/gocardless/anu/releases/download/v33.0.0/anu_33.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "2421a782d73ffbe7e3a9613c6ab6413c24e713764f01eb07d348ba9f8be0e64d"
 
       def install
         bin.install "anu"
