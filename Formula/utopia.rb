@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Utopia < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/utopia"
-  version "33.1.5"
+  version "33.1.8"
 
   depends_on "argocd"
   depends_on "bash"
@@ -15,9 +15,9 @@ class Utopia < Formula
   depends_on "yq"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v33.1.5/utopia_33.1.5_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "fb8f1243ee754521e0430fe851d95f952ec4a2d50ce8dae08b8a1f1afa4aeadb"
+    on_intel do
+      url "https://github.com/gocardless/utopia/releases/download/v33.1.8/utopia_33.1.8_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "2827b9a5ddb88fff46c608dfc1b806da0eb05fde37f08c42ea762e20b37a5f9b"
 
       def install
         bin.install "utopia"
@@ -27,9 +27,9 @@ class Utopia < Formula
         (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gocardless/utopia/releases/download/v33.1.5/utopia_33.1.5_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "1c02a93d1ad10b87196b233930456f7d8943af5e45949ee59dfe60fefe3eb239"
+    on_arm do
+      url "https://github.com/gocardless/utopia/releases/download/v33.1.8/utopia_33.1.8_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "5925ce6ce142c9f8cc76f45d0fc87d58fb566adc57c9b4372aae8e8ec052c157"
 
       def install
         bin.install "utopia"
@@ -42,28 +42,32 @@ class Utopia < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v33.1.5/utopia_33.1.5_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a29cae46e1bb99ce8208f02f4f0447e96b2fbce46c5170fb8197a83cfb32c6ee"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gocardless/utopia/releases/download/v33.1.8/utopia_33.1.8_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "bb8365cccaa78537f4286f919afcfc43c5ce252a881aaaeedd46170a0643e853"
 
-      def install
-        bin.install "utopia"
+        def install
+          bin.install "utopia"
 
-        # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+          # Install shell auto-completion
+          (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
+          (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v33.1.5/utopia_33.1.5_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "b8014c709720a337784fe71a97e0d18a0cb51f7745d5bcf848df93ad30dd7c19"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gocardless/utopia/releases/download/v33.1.8/utopia_33.1.8_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "323b930a7d06f47ce8ea84d0496728010193c194f27c9263a4f19e953e78b48d"
 
-      def install
-        bin.install "utopia"
+        def install
+          bin.install "utopia"
 
-        # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+          # Install shell auto-completion
+          (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
+          (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        end
       end
     end
   end
