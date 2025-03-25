@@ -6,20 +6,20 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Devpub < Formula
   desc "A simple utility for working with the pubsub emulator."
   homepage "https://github.com/gocardless/devpub"
-  version "0.0.2"
+  version "0.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/devpub/releases/download/v0.0.2/devpub_0.0.2_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "763946c12902fb381fc462248264ff25bff5c03f600202e23f76153cf3b88aca"
+      url "https://github.com/gocardless/devpub/releases/download/v0.1.0/devpub_0.1.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "12ed52ba6bc74d4932aabc59fbd35abe14405bafc7b3fde3085e36f521f797e1"
 
       def install
         bin.install "devpub"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/devpub/releases/download/v0.0.2/devpub_0.0.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "37abab5eceee1bdec19309b02d92c4f15502766d07b58118ba4d69598f05e676"
+      url "https://github.com/gocardless/devpub/releases/download/v0.1.0/devpub_0.1.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "6cc1204cfaf5629169116f2ab88ba806e76fe274244378af48b74198341df4de"
 
       def install
         bin.install "devpub"
@@ -30,8 +30,8 @@ class Devpub < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/devpub/releases/download/v0.0.2/devpub_0.0.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "1ec065422925c4cbbdcd5873e76fc4222d7ea0ffc1e4b55d3a9e33f6dfecb76a"
+        url "https://github.com/gocardless/devpub/releases/download/v0.1.0/devpub_0.1.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "baf7dc6022cd1b7db22dbf337ba439147a92949a2b6ae386d9700b62fac537e3"
 
         def install
           bin.install "devpub"
@@ -40,8 +40,8 @@ class Devpub < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/devpub/releases/download/v0.0.2/devpub_0.0.2_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "2dfc2798bc7cadfc0b8f28d4087ae358337900a97dd9db33b5c8a403d47186b7"
+        url "https://github.com/gocardless/devpub/releases/download/v0.1.0/devpub_0.1.0_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "b84053b1a8e5935bad4d8ad9413d1e8f6f51aaae06e53568b53293e1b4033362"
 
         def install
           bin.install "devpub"
