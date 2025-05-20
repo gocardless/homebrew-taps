@@ -6,20 +6,20 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class GcOwners < Formula
   desc "GoCardless code ownership tool"
   homepage "https://github.com/gocardless/gc-owners"
-  version "0.5.0"
+  version "1.0.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.5.0/codeowners_0.5.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "9a9eeb5adba79a3a6351cf66ddbd30e596dc780b8ec8f2179835a2785c794086"
+      url "https://github.com/gocardless/codeowners/releases/download/v1.0.0/codeowners_1.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "b1703729b673803dae0293ac2db8b0ad7eee24c7fb67601dad5085b94612b089"
 
       def install
         bin.install "gc-owners"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/codeowners/releases/download/v0.5.0/codeowners_0.5.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a3df356838bd6bdbaab91d72640c38ed0b52a1e42dbe59114eea9b1eed01c2b9"
+      url "https://github.com/gocardless/codeowners/releases/download/v1.0.0/codeowners_1.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "e02211424feed8e2d43eedb9c98e6255a7d965fa1b62a4ff77b09847d3bb49c3"
 
       def install
         bin.install "gc-owners"
@@ -28,24 +28,18 @@ class GcOwners < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/codeowners/releases/download/v0.5.0/codeowners_0.5.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "825f81ad39e7911b93c05fefeeb7254de1176a7a34cd3b18c8aaf98dd0e0d773"
-
-        def install
-          bin.install "gc-owners"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gocardless/codeowners/releases/download/v1.0.0/codeowners_1.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "fff0e5e907ba0a3498d67562147dcdec9260f9f7c222e0cec1be63228b31940f"
+      def install
+        bin.install "gc-owners"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/codeowners/releases/download/v0.5.0/codeowners_0.5.0_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "194bd25938d04605210ba92d59460a279869e513a1af998fdb782331dfaf0261"
-
-        def install
-          bin.install "gc-owners"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gocardless/codeowners/releases/download/v1.0.0/codeowners_1.0.0_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "a2c2f3c393dc2629cdb087f4feab229a709b1e8838e9f2275377b5d5af4abd63"
+      def install
+        bin.install "gc-owners"
       end
     end
   end
