@@ -3,15 +3,15 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Crank < Formula
   desc "GoCardless JSONSchema template generator"
   homepage "https://github.com/gocardless/crank"
-  version "3"
+  version "4"
 
   if OS.mac?
-    url "https://github.com/gocardless/crank/releases/download/v26e1536/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
-    sha256 "57070386320142d7548d225156a1e6a06e1abd9fc33f871b92737a33696ef161"
+    url "https://github.com/gocardless/crank/releases/download/vdaf95a2/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
+    sha256 "90d8c852c917d2ac15c0821bacc2e2835d8f7ff67cf4e750acb61ad43e9faf08"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/crank/releases/download/v26e1536/crank_linux_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "98fe8dfadf9d9d1cec89db6a8a907b99846f6dff198e8bf725d528b32d7ce244"
+      url "https://github.com/gocardless/crank/releases/download/vdaf95a2/crank_linux_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "0c77d0056a9d907f286febf6d9822825f492cf845341b41070623be2107b6ddb"
     end
   end
 
