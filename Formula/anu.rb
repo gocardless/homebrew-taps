@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "34.0.0"
+  version "34.0.1"
 
   depends_on "argocd"
   depends_on "bash"
@@ -17,8 +17,8 @@ class Anu < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.0/anu_34.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "e5c114bc6409c7939918b74b2a2cb7aefc1a80a3e474d144732f8b25ff9b3d6d"
+      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "09701994435c3fc0c8bc497f8b1dae036935287691a9d81a7d7508ce372deb70"
 
       def install
         bin.install "anu"
@@ -29,8 +29,8 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.0/anu_34.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "6987e20880680ca0f15944440701b5815d7fcf8dab07376ea7ae02875828a840"
+      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "fd94a0d3c01cb99bc37865642a91906f1e8126c3c39231db2ad9347f4d1df2eb"
 
       def install
         bin.install "anu"
@@ -44,8 +44,8 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.0/anu_34.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "e48c550e9471590204fab2b16b0c8243b08aee431c1154ac349eb1798f95ae43"
+      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "a77ae6a4c51c5fccc60e2bb1bfc5b72e59932a72dfc8ae32f289e759cba1c733"
       def install
         bin.install "anu"
 
