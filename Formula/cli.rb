@@ -8,9 +8,22 @@ class Cli < Formula
   version "1.0.2"
 
   on_macos do
-    if Hardware::CPU.intel?
+    on_intel do
       url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_macOS_x86_64.tar.gz"
-      sha256 "0708eb79da1cd79741e43766ac11b44298d9d64e29cf81a8fe3b999ede43e234"
+      sha256 "4b4290fe106529ddc78974187aefc8e68c52d41522e28b532a583e783c9ba18b"
+
+      def install
+        bin.install "gc"
+        bin.install_symlink "gc" => "gocardless"
+
+        # Install shell auto-completion
+        (bash_completion/"gc").write(Utils.popen_read("#{bin}/gc completion bash"))
+        (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
+      end
+    end
+    on_arm do
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_macOS_arm64.tar.gz"
+      sha256 "4b5ecbfe290e4c07c2016613f5d36589aaf0c8e5024e19e099e1f9b116b83efb"
 
       def install
         bin.install "gc"
@@ -24,30 +37,34 @@ class Cli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_Linux_arm64.tar.gz"
-      sha256 "a9e58069ad306e950edbbcda733e31a3c49dead5bb45d4f1e4b06d551ddf8cac"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_Linux_x86_64.tar.gz"
+        sha256 "c3667449fe7c30bec130866b0b34166ef604265dc5059fc88c5e668fd7071822"
 
-      def install
-        bin.install "gc"
-        bin.install_symlink "gc" => "gocardless"
+        def install
+          bin.install "gc"
+          bin.install_symlink "gc" => "gocardless"
 
-        # Install shell auto-completion
-        (bash_completion/"gc").write(Utils.popen_read("#{bin}/gc completion bash"))
-        (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
+          # Install shell auto-completion
+          (bash_completion/"gc").write(Utils.popen_read("#{bin}/gc completion bash"))
+          (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_Linux_x86_64.tar.gz"
-      sha256 "afd76e41c0690beea7fea19470e199553caa220869a88d3b5c4c48958684d97b"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gocardless/cli-releases/releases/download/v1.0.2/cli_1.0.2_Linux_arm64.tar.gz"
+        sha256 "c0a9caa99f656836ec899735d78e75765e5b799eaed7abdfe2c2dfed9bd76cd2"
 
-      def install
-        bin.install "gc"
-        bin.install_symlink "gc" => "gocardless"
+        def install
+          bin.install "gc"
+          bin.install_symlink "gc" => "gocardless"
 
-        # Install shell auto-completion
-        (bash_completion/"gc").write(Utils.popen_read("#{bin}/gc completion bash"))
-        (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
+          # Install shell auto-completion
+          (bash_completion/"gc").write(Utils.popen_read("#{bin}/gc completion bash"))
+          (zsh_completion/"_gc").write(Utils.popen_read("#{bin}/gc completion zsh"))
+        end
       end
     end
   end
