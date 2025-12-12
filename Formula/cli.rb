@@ -78,6 +78,7 @@ class Cli < Formula
   end
 
   test do
-    system "#{bin}/gc version" && system "#{bin}/gocardless version"
+    system "#{bin}/gc", "version"
+    system "#{bin}/gocardless", "version"
   end
 end
