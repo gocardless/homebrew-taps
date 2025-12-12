@@ -1,0 +1,52 @@
+name: Test Formulas
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  test-formulas:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        run: |
+          # Homebrew is pre-installed on macOS runners
+          brew update
+          # Tap this repository
+          brew tap gocardless/taps "$GITHUB_WORKSPACE"
+
+      - name: Audit formulas
+        run: |
+          for formula in Formula/*.rb; do
+            formula_name=$(basename "$formula" .rb)
+            echo "Auditing gocardless/taps/$formula_name..."
+            brew audit --strict --online "gocardless/taps/$formula_name" || exit 1
+          done
+
+      - name: Install and test formulas
+        run: |
+          for formula in Formula/*.rb; do
+            formula_name=$(basename "$formula" .rb)
+            echo "Testing gocardless/taps/$formula_name..."
+
+            # Install from source
+            brew install --build-from-source "gocardless/taps/$formula_name" || exit 1
+
+            # Run formula tests
+            brew test "gocardless/taps/$formula_name" || exit 1
+
+            # Uninstall to clean up
+            brew uninstall "gocardless/taps/$formula_name"
+          done
+
+      - name: Check formula style
+        run: |
+          for formula in Formula/*.rb; do
+            formula_name=$(basename "$formula" .rb)
+            brew style "gocardless/taps/$formula_name"
+          done
