@@ -14,4 +14,8 @@ class ExposeHostAgent < Formula
   def install
     bin.install "bin/expose-host-agent"
   end
+
+  test do
+    system "#{bin}/expose-host-agent", "echo", "test"
+  end
 end
