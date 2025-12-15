@@ -10,4 +10,8 @@ class Logsearch < Formula
   def install
     bin.install "logsearch"
   end
+
+  test do
+    system "#{bin}/logsearch", "--version"
+  end
 end
