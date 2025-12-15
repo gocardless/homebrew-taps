@@ -32,8 +32,27 @@ jobs:
             brew audit --skip-style "gocardless/taps/$formula_name" || exit 1
           done
 
+  discover-formulas:
+    runs-on: ubuntu-latest
+    outputs:
+      formulas: ${{ steps.set-matrix.outputs.formulas }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Discover formulas
+        id: set-matrix
+        run: |
+          formulas=$(ls Formula/*.rb | xargs -n1 basename | sed 's/\.rb$//' | jq -R -s -c 'split("\n")[:-1]')
+          echo "formulas=$formulas" >> $GITHUB_OUTPUT
+
   install-and-test-formulas:
     runs-on: macos-latest
+    needs: discover-formulas
+    strategy:
+      fail-fast: false
+      matrix:
+        formula: ${{ fromJson(needs.discover-formulas.outputs.formulas) }}
 
     steps:
       - name: Checkout repository
@@ -47,23 +66,17 @@ jobs:
           # Tap this repository
           brew tap gocardless/taps "$GITHUB_WORKSPACE"
 
-      - name: Install and test formulas
+      - name: Install and test formula
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
         run: |
-          for formula in Formula/*.rb; do
-            formula_name=$(basename "$formula" .rb)
-            echo "Testing gocardless/taps/$formula_name..."
+          echo "Testing gocardless/taps/${{ matrix.formula }}..."
 
-            # Install from source
-            brew install --build-from-source "gocardless/taps/$formula_name" || exit 1
+          # Install from source
+          brew install --build-from-source "gocardless/taps/${{ matrix.formula }}"
 
-            # Run formula tests
-            brew test "gocardless/taps/$formula_name" || exit 1
-
-            # Uninstall to clean up
-            brew uninstall "gocardless/taps/$formula_name"
-          done
+          # Run formula tests
+          brew test "gocardless/taps/${{ matrix.formula }}"
 
   check-formula-style:
     runs-on: macos-latest
