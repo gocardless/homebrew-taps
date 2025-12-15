@@ -29,7 +29,8 @@ jobs:
           for formula in Formula/*.rb; do
             formula_name=$(basename "$formula" .rb)
             echo "Auditing gocardless/taps/$formula_name..."
-            brew audit --skip-style --online "gocardless/taps/$formula_name" || exit 1
+            # Skip online checks because releases are private and require custom download strategy
+            brew audit --skip-style "gocardless/taps/$formula_name" || exit 1
           done
 
       - name: Install and test formulas
