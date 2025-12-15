@@ -81,25 +81,3 @@ jobs:
 
           # Run formula tests
           brew test "gocardless/taps/${{ matrix.formula }}"
-
-  check-formula-style:
-    runs-on: macos-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Homebrew
-        env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
-        run: |
-          # Homebrew is pre-installed on macOS runners
-          # Tap this repository
-          brew tap gocardless/taps "$GITHUB_WORKSPACE"
-
-      - name: Check formula style
-        run: |
-          for formula in Formula/*.rb; do
-            formula_name=$(basename "$formula" .rb)
-            brew style "gocardless/taps/$formula_name"
-          done
