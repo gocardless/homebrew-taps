@@ -20,6 +20,6 @@ class Kubebuilder < Formula
   end
 
   test do
-    system "kubebuilder", "version"
+    system "#{bin}/kubebuilder", "version"
   end
 end
