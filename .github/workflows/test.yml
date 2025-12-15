@@ -72,6 +72,10 @@ jobs:
         run: |
           echo "Testing gocardless/taps/${{ matrix.formula }}..."
 
+          # Unlink any conflicting formulae before installing
+          brew unlink yq 2>/dev/null || true
+          brew unlink python-yq 2>/dev/null || true
+
           # Install from source
           brew install --build-from-source "gocardless/taps/${{ matrix.formula }}"
 
