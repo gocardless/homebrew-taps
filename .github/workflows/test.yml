@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  test-formulas:
+  audit-formulas:
     runs-on: macos-latest
 
     steps:
@@ -32,6 +32,21 @@ jobs:
             brew audit --skip-style "gocardless/taps/$formula_name" || exit 1
           done
 
+  install-and-test-formulas:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          # Homebrew is pre-installed on macOS runners
+          # Tap this repository
+          brew tap gocardless/taps "$GITHUB_WORKSPACE"
+
       - name: Install and test formulas
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
@@ -49,6 +64,21 @@ jobs:
             # Uninstall to clean up
             brew uninstall "gocardless/taps/$formula_name"
           done
+
+  check-formula-style:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          # Homebrew is pre-installed on macOS runners
+          # Tap this repository
+          brew tap gocardless/taps "$GITHUB_WORKSPACE"
 
       - name: Check formula style
         run: |
