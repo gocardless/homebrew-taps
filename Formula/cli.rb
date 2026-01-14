@@ -5,12 +5,12 @@
 class Cli < Formula
   desc "GoCardless CLI"
   homepage "https://github.com/gocardless/cli-releases"
-  version "1.3.0"
+  version "1.3.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.3.0/cli_1.3.0_macOS_x86_64.tar.gz"
-      sha256 "6d44f95411a6e816c71bf499e3f368bc6485a415474488141b821aa4986ac332"
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.3.1/cli_1.3.1_macOS_x86_64.tar.gz"
+      sha256 "45201ad5d27531a8b1ce952207e314412fb90c3e96b9fdfd2adb0fc80430cde4"
 
       def install
         bin.install "gc"
@@ -24,8 +24,8 @@ class Cli < Formula
       end
     end
     on_arm do
-      url "https://github.com/gocardless/cli-releases/releases/download/v1.3.0/cli_1.3.0_macOS_arm64.tar.gz"
-      sha256 "f63c5a57e5dd1762a319c05489629b7b27046223f53d2d8cbdc755b7d450be31"
+      url "https://github.com/gocardless/cli-releases/releases/download/v1.3.1/cli_1.3.1_macOS_arm64.tar.gz"
+      sha256 "b98eb4faccc53281eab89f07a33725655367b0e51fb3b6408dd2ee0301d1b368"
 
       def install
         bin.install "gc"
@@ -43,8 +43,8 @@ class Cli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/cli-releases/releases/download/v1.3.0/cli_1.3.0_Linux_x86_64.tar.gz"
-        sha256 "c0001931738dd16f0d58dc1bafaac450d20a93f2aa01202797fa07734d57feba"
+        url "https://github.com/gocardless/cli-releases/releases/download/v1.3.1/cli_1.3.1_Linux_x86_64.tar.gz"
+        sha256 "b1700ef6707fe5670c9e7175d0f922c87b1673f68ffb58c0820a92d44c250de9"
 
         def install
           bin.install "gc"
@@ -60,8 +60,8 @@ class Cli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/cli-releases/releases/download/v1.3.0/cli_1.3.0_Linux_arm64.tar.gz"
-        sha256 "a315df894a7f401a8405022402ae67b4e55aea5be7cf2d43d6df8bd005e3e4dc"
+        url "https://github.com/gocardless/cli-releases/releases/download/v1.3.1/cli_1.3.1_Linux_arm64.tar.gz"
+        sha256 "1693bf240e557be793a2da44ff77b705cb9696a9e00fa19dd21dc02d54d84d13"
 
         def install
           bin.install "gc"
