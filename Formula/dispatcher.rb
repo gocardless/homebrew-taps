@@ -47,6 +47,6 @@ class Dispatcher < Formula
   end
 
   test do
-    system "#{bin}/dispatcher version"
+    system "#{bin}/dispatcher", "--version"
   end
 end

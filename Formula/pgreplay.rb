@@ -11,6 +11,6 @@ class Pgreplay < Formula
   end
 
   test do
-    system "#{bin}/pgreplay version"
+    system "#{bin}/pgreplay --version"
   end
 end
