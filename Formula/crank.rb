@@ -3,7 +3,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Crank < Formula
   desc "GoCardless JSONSchema template generator"
   homepage "https://github.com/gocardless/crank"
-  version "1.2.0"
+  version "5"
 
   if OS.mac?
     url "https://github.com/gocardless/crank/releases/download/v1.2.0/crank_darwin_amd64", :using => Gc::GithubPrivateReleaseDownloadStrategy
