@@ -24,6 +24,7 @@ class Crank < Formula
   end
 
   test do
-    assert_equal(shell_output("#{bin}/crank").first(17), "crank Git version")
+    output = shell_output("#{bin}/crank 2>&1", 2)
+    assert_match "Usage:", output
   end
 end

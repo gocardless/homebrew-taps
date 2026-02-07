@@ -46,6 +46,6 @@ class Draupnir < Formula
   end
 
   test do
-    system "draupnir-client help"
+    system "#{bin}/draupnir", "--help"
   end
 end

@@ -9,4 +9,8 @@ class StolonPgbouncer < Formula
   def install
     bin.install "stolon-pgbouncer"
   end
+
+  test do
+    system "#{bin}/stolon-pgbouncer --version"
+  end
 end

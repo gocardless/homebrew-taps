@@ -1,0 +1,83 @@
+name: Test Formulas
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  audit-formulas:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          # Homebrew is pre-installed on macOS runners
+          # Tap this repository
+          brew tap gocardless/taps "$GITHUB_WORKSPACE"
+
+      - name: Audit formulas
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          for formula in Formula/*.rb; do
+            formula_name=$(basename "$formula" .rb)
+            echo "Auditing gocardless/taps/$formula_name..."
+            # Skip online checks because releases are private and require custom download strategy
+            brew audit --strict --skip-style "gocardless/taps/$formula_name" || exit 1
+          done
+
+  discover-formulas:
+    runs-on: ubuntu-latest
+    outputs:
+      formulas: ${{ steps.set-matrix.outputs.formulas }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Discover formulas
+        id: set-matrix
+        run: |
+          formulas=$(ls Formula/*.rb | xargs -n1 basename | sed 's/\.rb$//' | jq -R -s -c 'split("\n")[:-1]')
+          echo "formulas=$formulas" >> $GITHUB_OUTPUT
+
+  install-and-test-formulas:
+    runs-on: macos-latest
+    needs: discover-formulas
+    strategy:
+      fail-fast: false
+      matrix:
+        formula: ${{ fromJson(needs.discover-formulas.outputs.formulas) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          # Homebrew is pre-installed on macOS runners
+          # Tap this repository
+          brew tap gocardless/taps "$GITHUB_WORKSPACE"
+
+      - name: Install and test formula
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GOCARDLESS_CI_ROBOT_TOKEN }}
+        run: |
+          echo "Testing gocardless/taps/${{ matrix.formula }}..."
+
+          # Unlink any conflicting formulae before installing
+          brew unlink yq 2>/dev/null || true
+          brew unlink python-yq 2>/dev/null || true
+
+          # Install from source
+          brew install --build-from-source "gocardless/taps/${{ matrix.formula }}"
+
+          # Run formula tests
+          brew test "gocardless/taps/${{ matrix.formula }}"

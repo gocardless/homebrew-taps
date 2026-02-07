@@ -73,6 +73,6 @@ class Utopia < Formula
   end
 
   test do
-    system "#{bin}/utopia version"
+    system "#{bin}/utopia --version"
   end
 end
