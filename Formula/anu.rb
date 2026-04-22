@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Anu < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/anu"
-  version "34.0.1"
+  version "35.0.0"
 
   depends_on "argocd"
   depends_on "bash"
@@ -17,10 +17,10 @@ class Anu < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "09701994435c3fc0c8bc497f8b1dae036935287691a9d81a7d7508ce372deb70"
+      url "https://github.com/gocardless/anu/releases/download/v35.0.0/anu_35.0.0_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "92327e4cf29b8f6b1db950a9bdcb300297859a3bd2b9b15d430f25ba8af6262b"
 
-      def install
+      define_method(:install) do
         bin.install "anu"
 
         # Install shell auto-completion
@@ -29,10 +29,10 @@ class Anu < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "fd94a0d3c01cb99bc37865642a91906f1e8126c3c39231db2ad9347f4d1df2eb"
+      url "https://github.com/gocardless/anu/releases/download/v35.0.0/anu_35.0.0_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "40290c6a157fa68e85d8da064d2880e418c6639ad75e8233fe09a10925b04e58"
 
-      def install
+      define_method(:install) do
         bin.install "anu"
 
         # Install shell auto-completion
@@ -44,9 +44,9 @@ class Anu < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/anu/releases/download/v34.0.1/anu_34.0.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "a77ae6a4c51c5fccc60e2bb1bfc5b72e59932a72dfc8ae32f289e759cba1c733"
-      def install
+      url "https://github.com/gocardless/anu/releases/download/v35.0.0/anu_35.0.0_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "983adfb279569848fdf46276201ac211c7d042db8d68d2e45c812b3a0f33acb8"
+      define_method(:install) do
         bin.install "anu"
 
         # Install shell auto-completion
