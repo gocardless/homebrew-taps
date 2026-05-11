@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Utopia < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/utopia"
-  version "38.1.1"
+  version "38.1.2"
 
   depends_on "argocd"
   depends_on "bash"
@@ -16,52 +16,56 @@ class Utopia < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/utopia/releases/download/v38.1.1/utopia_38.1.1_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "0d3525e37c3225f1ad25750c0dc887dfb3ac36be58aab5de99a911ac6307853b"
+      url "https://github.com/gocardless/utopia/releases/download/v38.1.2/utopia_38.1.2_darwin_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "51de500838dfdeb9ea2d615e723793b8ae0d47e0ad6a9cce33f5c9874114eef0"
 
       define_method(:install) do
         bin.install "utopia"
 
         # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia completion bash"))
+        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia completion zsh"))
+        (fish_completion/"utopia.fish").write(Utils.popen_read("#{bin}/utopia completion fish"))
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/utopia/releases/download/v38.1.1/utopia_38.1.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "c258339266a250bd850ef6ca4114b5ed18850faea69078694cbe95fa14d94535"
+      url "https://github.com/gocardless/utopia/releases/download/v38.1.2/utopia_38.1.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "9283adec6881d2fa47686a9400ac811ae4fbe98af9ad632a553b0d5aeab5ae33"
 
       define_method(:install) do
         bin.install "utopia"
 
         # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia completion bash"))
+        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia completion zsh"))
+        (fish_completion/"utopia.fish").write(Utils.popen_read("#{bin}/utopia completion fish"))
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v38.1.1/utopia_38.1.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "142b751238f99afeae469bd2d30bfd1936f02fa59c4d26e3aec2a553b496802d"
+      url "https://github.com/gocardless/utopia/releases/download/v38.1.2/utopia_38.1.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "7b3437c5f41bc9ee78232d688b483621deaf94ffb7ce6041746e7984d4a80b8d"
       define_method(:install) do
         bin.install "utopia"
 
         # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia completion bash"))
+        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia completion zsh"))
+        (fish_completion/"utopia.fish").write(Utils.popen_read("#{bin}/utopia completion fish"))
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v38.1.1/utopia_38.1.1_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "ff6ec576b6872b3f06b6193d6f9e1d25b32aa70acff14f6611ff29670928c3ac"
+      url "https://github.com/gocardless/utopia/releases/download/v38.1.2/utopia_38.1.2_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "3d8f6a45e74fbecfe4a270416b111225ffe9759d1b741a4bb3503d684555eada"
       define_method(:install) do
         bin.install "utopia"
 
         # Install shell auto-completion
-        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-bash"))
-        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia --completion-script-zsh").strip)
+        (bash_completion/"utopia").write(Utils.popen_read("#{bin}/utopia completion bash"))
+        (zsh_completion/"_utopia").write(Utils.popen_read("#{bin}/utopia completion zsh"))
+        (fish_completion/"utopia.fish").write(Utils.popen_read("#{bin}/utopia completion fish"))
       end
     end
   end
