@@ -6,20 +6,20 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Crank < Formula
   desc "GoCardless JSONSchema template generator"
   homepage "https://github.com/gocardless/crank"
-  version "7.0.0"
+  version "7.0.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/crank/releases/download/v7.0.0/crank_darwin_amd64", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "c51ed2177cd8a5cfadba07eb292a011290fd6808a66706ced7b3f671580a1f45"
+      url "https://github.com/gocardless/crank/releases/download/v7.0.1/crank_darwin_amd64", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "79e0ccd1dbb95f3a7727f24d99e387aea3b7346ab9f05412df35b0f19a7cb8ba"
 
       def install
         bin.install "crank_darwin_amd64" => "crank"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/crank/releases/download/v7.0.0/crank_darwin_arm64", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "e6afa70fab7bdc612b93cce4b574df47bf884bd5a601f0141daa1fe6321fed83"
+      url "https://github.com/gocardless/crank/releases/download/v7.0.1/crank_darwin_arm64", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "19bd18ba739853926a59ad2f1e955631682313e453d0624b97a50a0491fdb7d9"
 
       def install
         bin.install "crank_darwin_arm64" => "crank"
@@ -30,8 +30,8 @@ class Crank < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/crank/releases/download/v7.0.0/crank_linux_amd64", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "67c1ef0076629947e0b42d7118a4108c7070bb374f2c9d5934015122fdcbef20"
+        url "https://github.com/gocardless/crank/releases/download/v7.0.1/crank_linux_amd64", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "cb2c9e94c06fab9a9f317126fc717ff9e7777fda9b7f9990b307815a9ddae950"
 
         def install
           bin.install "crank_linux_amd64" => "crank"
@@ -40,8 +40,8 @@ class Crank < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gocardless/crank/releases/download/v7.0.0/crank_linux_arm64", using: Gc::GithubPrivateReleaseDownloadStrategy
-        sha256 "d44cf7f057bc0cd942a8eb4ac047ab332837d9a20bd86a5408bc490a8fc762f8"
+        url "https://github.com/gocardless/crank/releases/download/v7.0.1/crank_linux_arm64", using: Gc::GithubPrivateReleaseDownloadStrategy
+        sha256 "20c71ae172854f938302edc2cdc39c36d2f46833906a13f012890ad1c1cc2fb0"
 
         def install
           bin.install "crank_linux_arm64" => "crank"
