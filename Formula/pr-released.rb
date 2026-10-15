@@ -5,9 +5,9 @@ class PrReleased < Formula
   homepage "https://github.com/gocardless/pr-released-bot"
   url "git@github.com:gocardless/pr-released-bot.git",
     using:    GitDownloadStrategy,
-    tag:      "0.0.6",
-    revision: "24ed6eb14dc0ccde55a41c7d93f8e45e359ba3f8"
-  version "0.0.6"
+    tag:      "0.0.7",
+    revision: "1031e7a39c200340a6977b432cbaf897957cca6e"
+  version "0.0.7"
 
   depends_on "gh"
 
