@@ -36,12 +36,12 @@ module Gc
     end
 
     def set_url
-      @url = "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/" \
-            "releases/assets/#{asset_id}"
+      @url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
     end
 
     def set_headers
       @meta[:headers] ||= []
+      @meta[:headers] << "Authorization: Bearer #{@github_token}"
       @meta[:headers] << "Accept: application/octet-stream"
     end
 
