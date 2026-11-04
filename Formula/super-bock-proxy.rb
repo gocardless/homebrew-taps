@@ -5,26 +5,26 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class SuperBockProxy < Formula
   desc "Local IAP-authenticating reverse proxy for Claude Code (LiteLLM)"
   homepage "https://github.com/gocardless/super-bock-proxy-releases"
-  version "1.4.0-g1ab8275"
+  version "1.4.0-g1ab8275-dirty"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275/super-bock-proxy_1.4.0-g1ab8275_darwin_arm64.tar.gz",
+      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275-dirty/super-bock-proxy_1.4.0-g1ab8275-dirty_darwin_arm64.tar.gz",
           using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "f27e561c808e24c68bb764b4f62a506be7010ae003b114a2ab60a30d5c08a163"
+      sha256 "057ee95bfd81accf254238ce71841ecaa0ef8ef31bd7a1d0033485b6df9ca8a1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275/super-bock-proxy_1.4.0-g1ab8275_darwin_amd64.tar.gz",
+      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275-dirty/super-bock-proxy_1.4.0-g1ab8275-dirty_darwin_amd64.tar.gz",
           using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "8a9a2daefb9f249a71c9e8b2964f2a68ff9ff747a1f7d2c6d29f0883c95cbf1d"
+      sha256 "1e648fd31575e4e932d35b8cf193ca25fa06bbbd20de50165436e0f77b329d77"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275/super-bock-proxy_1.4.0-g1ab8275_linux_amd64.tar.gz",
+      url "https://github.com/gocardless/super-bock-proxy-releases/releases/download/v1.4.0-g1ab8275-dirty/super-bock-proxy_1.4.0-g1ab8275-dirty_linux_amd64.tar.gz",
           using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "abb1edd793a687cac9922fb2041bffc31daf36a22741485ed0b2e833049cf675"
+      sha256 "019ed00fa07311c6de253e13e4481c5387a82b5efc888362ac06362085ea9293"
     end
   end
 
