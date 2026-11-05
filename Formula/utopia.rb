@@ -6,7 +6,7 @@ require_relative "../lib/gc/github_private_release_download_strategy"
 class Utopia < Formula
   desc "GoCardless Platform toolkit"
   homepage "https://github.com/gocardless/utopia"
-  version "40.2.1"
+  version "40.2.2"
 
   depends_on "argocd"
   depends_on "bash"
@@ -16,8 +16,8 @@ class Utopia < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gocardless/utopia/releases/download/v40.2.1/utopia_40.2.1_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "9c6f902ea138d0bea71a26be934ddc6e7b587dd387f9b4668482cbf5c656f6a1"
+      url "https://github.com/gocardless/utopia/releases/download/v40.2.2/utopia_40.2.2_darwin_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "61395993ff055da6d5493bd24dd4a5a9217c95c32460ae641aba5a4c5c4ff85b"
 
       define_method(:install) do
         bin.install "utopia"
@@ -32,8 +32,8 @@ class Utopia < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v40.2.1/utopia_40.2.1_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "ac131871e5d2d8f721e28713362c903ee2b11398b3e1fcd7ecce6e2aa69f3c06"
+      url "https://github.com/gocardless/utopia/releases/download/v40.2.2/utopia_40.2.2_linux_amd64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "cc907c00fe76291eab1ef6d0006b0757e9ddaad9869dde4c08fa910652198b1f"
       define_method(:install) do
         bin.install "utopia"
 
@@ -44,8 +44,8 @@ class Utopia < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gocardless/utopia/releases/download/v40.2.1/utopia_40.2.1_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
-      sha256 "da1222199ff9e430eb73a689c7136a1fd82e809055df26017c86da6f6d169c6a"
+      url "https://github.com/gocardless/utopia/releases/download/v40.2.2/utopia_40.2.2_linux_arm64.tar.gz", using: Gc::GithubPrivateReleaseDownloadStrategy
+      sha256 "f21d01498dc6bbd771f59305e920d642c81026fe24fbef970e7a79ed30cca04a"
       define_method(:install) do
         bin.install "utopia"
 
