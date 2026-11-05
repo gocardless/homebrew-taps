@@ -34,7 +34,7 @@ class SuperBockProxy < Formula
   end
 
   service do
-    run [opt_bin/"super-bock-proxy", "-env=dev", "-brand=external"]
+    run [opt_bin/"super-bock-proxy"]
     keep_alive true
     log_path var/"log/super-bock-proxy.log"
     error_log_path var/"log/super-bock-proxy.log"
